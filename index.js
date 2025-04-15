@@ -16,9 +16,9 @@ async function getCrypto(cryptoName) {
     result.textContent = "No se encontró esa cripto 😢";
   } else {
     console.log(`Cripto encontrada: ${coin.name} (${coin.symbol})`);
-    const usd = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=clp`);
-    const usdData = await usd.json();
-    result.textContent = `Cripto encontrada: ${coin.name} (${coin.symbol}) - Precio: $${usdData[coin.id].clp}`;
+    const clp = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=clp`);
+    const clpData = await clp.json();
+    result.textContent = `Cripto encontrada: ${coin.name} (${coin.symbol}) - Precio: $${clpData[coin.id].clp}`;
   }
 
 }
@@ -27,7 +27,6 @@ button.addEventListener("click", () => {
   const cryptoName = input.value.trim();
   getCrypto(cryptoName);
 });
-
 
 input.addEventListener("keydown", (event) => {
   if (event.key === " " || event.key === "Enter") {
