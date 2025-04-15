@@ -16,9 +16,9 @@ async function getCrypto(cryptoName) {
     result.textContent = "No se encontró esa cripto 😢";
   } else {
     console.log(`Cripto encontrada: ${coin.name} (${coin.symbol})`);
-    const usd = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd`);
+    const usd = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=clp`);
     const usdData = await usd.json();
-    result.textContent = `Cripto encontrada: ${coin.name} (${coin.symbol}) - Precio: $${usdData[coin.id].usd}`;
+    result.textContent = `Cripto encontrada: ${coin.name} (${coin.symbol}) - Precio: $${usdData[coin.id].clp}`;
   }
 
 }
