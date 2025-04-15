@@ -2,3 +2,7 @@ body {
   color:black;
   background-color: bisque;
 }
+
+::placeholder {
+  text-align: center;
+}
